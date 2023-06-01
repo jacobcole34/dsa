@@ -89,3 +89,43 @@ const anagrams = (s1, s2) => {
   return true;
   
 };
+
+// Write a function, mostFrequentChar, that takes in a string as an argument. The function should return the most frequent character of the string. If there are ties, return the character that appears earlier in the string.
+
+// You can assume that the input string is non-empty.
+
+const mostFrequentChar = (s) => {
+  // todo
+  
+  const cache = {};
+  let highCount = 0;
+  let match = [];
+  
+  //  iterate over string, creating cache object
+  //  iterate over cache, setting highest count #, add value to array
+  //  iterate over string, return char that matches array
+  
+  for (let i = 0; i < s.length; i++){
+    if(!cache[s[i]]){
+      cache[s[i]] = 1;
+    }
+    else cache[s[i]] += 1;
+  }
+  
+  for(const [key, value] of Object.entries(cache)){
+    if(value >= highCount){
+      highCount = value;
+    }
+  }
+  
+  for(const [key, value] of Object.entries(cache)){
+  if(value === highCount){
+      match.push(key);
+    }
+  }
+  
+  for (let i = 0; i < s.length; i++){
+    if(match.includes(s[i]))return s[i];
+  }
+  
+};
