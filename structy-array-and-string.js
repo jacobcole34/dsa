@@ -62,3 +62,30 @@ const compress = (s) => {
   
 };
 
+// Write a function, anagrams, that takes in two strings as arguments. The function should return a boolean indicating whether or not the strings are anagrams. Anagrams are strings that contain the same characters, but in any order.
+
+const anagrams = (s1, s2) => {
+  // todo
+  
+  if(s1.length !== s2.length)return false;
+  
+  const cache1 = {};
+  const cache2 = {};
+  
+  for(let i = 0; i < s1.length; i++){
+    if(!cache1[s1[i]]) cache1[s1[i]] = 1;
+    else cache1[s1[i]] += 1;
+  }
+  
+  for(let i = 0; i < s2.length; i++){
+    if(!cache2[s2[i]]) cache2[s2[i]] = 1;
+    else cache2[s2[i]] += 1;
+  }
+  
+  for(const el in cache1){
+    if(cache1[el] !== cache2[el])return false;
+  }
+  
+  return true;
+  
+};
