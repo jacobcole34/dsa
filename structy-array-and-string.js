@@ -178,3 +178,23 @@ const intersection = (a, b) => {
   return myArray;
 
 };
+
+const fiveSort = (nums) => {
+  // todo
+  let p1 = 0;
+  let p2 = nums.length - 1;
+  let swap;
+  
+  while(p1 < p2){
+    if(nums[p2] === 5){
+      p2--;
+    }
+    else if(nums[p1] === 5 && nums[p2] !== 5){
+      swap = nums[p2];
+      nums[p2] = nums[p1];
+      nums[p1] = swap;
+    }
+    else p1++;
+  }
+  return nums;
+};
