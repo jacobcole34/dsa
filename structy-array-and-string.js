@@ -130,3 +130,18 @@ const mostFrequentChar = (s) => {
   
 };
 
+const pairSum = (numbers, targetSum) => {
+  // todo
+  const cache = {};
+  
+  for(let i = 0; i < numbers.length; i++){
+    
+    const complement = targetSum - numbers[i];
+    
+    if(cache[complement] !== undefined && complement !== i){
+      return [cache[complement], i]
+    };
+    cache[numbers[i]] = i;
+  }
+};
+
