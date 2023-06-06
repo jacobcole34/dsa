@@ -161,3 +161,20 @@ const pairProduct = (numbers, targetProduct) => {
   }
   
 };
+
+const intersection = (a, b) => {
+  // todo
+  const cache = {};
+  const myArray = [];
+  
+  a.forEach( el => {
+    cache[el] = 1;
+  })
+  
+  b.forEach( el => {
+    if(cache[el] !== undefined)myArray.push(el);
+  });
+            
+  return myArray;
+
+};
