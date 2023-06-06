@@ -145,3 +145,19 @@ const pairSum = (numbers, targetSum) => {
   }
 };
 
+const pairProduct = (numbers, targetProduct) => {
+  // todo
+  const cache = {};
+  
+  for(let i = 0; i < numbers.length; i++){
+    // Divide targetProduct by number[i]
+    const complement = targetProduct/numbers[i];
+    cache[numbers[i]] = i;
+    if(cache[complement] !== undefined && cache[complement] !== i){
+      return [cache[complement], i];
+    }
+
+    console.log(cache);
+  }
+  
+};
