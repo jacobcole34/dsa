@@ -198,3 +198,23 @@ const fiveSort = (nums) => {
   }
   return nums;
 };
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+const linkedListValues = (head) => {
+  // todo
+  const myValues = [];
+  let current = head;
+  
+  while(current !== null){
+    myValues.push(current.val);
+    current = current.next;
+  }
+  
+  return myValues;
+};
