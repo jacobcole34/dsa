@@ -88,4 +88,4 @@ const reverseList = (head) => {
     current = next;
   }
   return prev;
-};  
+};
