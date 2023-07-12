@@ -89,3 +89,32 @@ const reverseList = (head) => {
   }
   return prev;
 };
+
+const zipperLists = (head1, head2) => {
+  let current1 = head1;
+  let current2 = head2;
+  let temp1 = null;
+  let temp2 = null;
+  
+  if (current1 === null) return head2;
+  if (current2 === null) return head1;
+
+  while(current1.next !== null && current2 !== null){
+    temp1 = current1.next;
+    temp2 = current2.next;
+
+    current1.next = current2;
+    current2.next = temp1;
+
+    current1 = temp1;
+    current2 = temp2;
+  }
+
+  // if nodes are remained in second list then attach them to the first list.
+  if (current1.next === null && current2 !== null) {
+    current1.next = current2;
+  }
+
+  return head1;
+
+};
